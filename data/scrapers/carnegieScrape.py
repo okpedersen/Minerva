@@ -15,7 +15,7 @@ def main():
 
         # open file
         filename = '{:03d}.txt'.format(page)
-        f = open('../data/carnegie/'+filename, 'w')
+        f = open('../raw/carnegie/'+filename, 'w')
 
         # isolate text from page
         page_text = r.text
