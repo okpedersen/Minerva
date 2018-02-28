@@ -3,12 +3,18 @@ import datetime
 import os
 
 def main():
-    
+
+    # get the root directory of the Minerva project
+    # e.g. /something/something/Minerva
+    basepath = os.path.normpath(os.path.realpath(__file__))
+    while os.path.basename(basepath) != "Minerva":
+        basepath = os.path.dirname(basepath)
+
     # input model parameters
     p = {}
     p["method"] = "markovify"
-    p["stateSize"] = 1
-    p["directory"] = "../../data/raw/facebook"
+    p["stateSize"] = 4
+    p["directory"] = os.path.normpath(os.path.join(basepath, "data/raw/mftd_english"))
     p["sentenceCount"] = 10
     p["comments"] = "n.a."
 
@@ -22,8 +28,8 @@ def main():
     for i in range(p["sentenceCount"]):
         sentences.append(model.make_sentence())
 
-    # # save results to file
-    # saveResults(dateStamp()+".txt", p, sentences)
+    # save results to file
+    saveResults(os.path.join(basepath, "results", dateStamp()+".txt"), p, sentences)
 
     for i in sentences:
         print(str(i)+"\n")
@@ -43,7 +49,7 @@ def getAllFilenames(directory):
 def joinTexts(directory, filenames):
     allText = ""
     for filename in filenames:
-        allText += " " + loadData(directory+"/" +filename)
+        allText += " " + loadData(os.path.join(directory,filename))
     return allText
 
 def makeMarkovModel(text, stateSize):
@@ -51,18 +57,20 @@ def makeMarkovModel(text, stateSize):
     return markovify.Text(text, state_size = stateSize)
 
 def saveResults(filename, p, results):
-    with open("../../results/"+filename, 'w') as file:
+    print("Writing to: " + filename)
+    with open(filename, 'w') as file:
         file.write("method:\t\t" + p["method"] + "\n")
-        file.write("training data:\t" + "../" + p["directory"] + "\n")
+        file.write("training data:\t" + p["directory"] + "\n")
         file.write("sentence count:\t" + str(p["sentenceCount"]) + "\n")
         file.write("comments:\t" + p["comments"] + "\n")
         file.write("---\n")
         for i in results:
-            file.write(i + "\n")
+            if i is not None:
+                file.write(i + "\n")
 
 def dateStamp():
     temp = datetime.datetime.now()
-    return "%04d" % temp.year + "%02d" % temp.month + "%02d" % temp.day + "%02d" % temp.hour + "%02d" % temp.minute + "%02d" % temp.second
+    return "{t.year:04d}{t.month:02d}{t.day:02d}{t.hour:02d}{t.minute:02d}{t.second:02d}".format(t=temp)
 
 if __name__ == '__main__':
     main()
