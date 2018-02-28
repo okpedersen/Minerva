@@ -26,7 +26,6 @@ def main():
 
     # parse all stories
     for i, link in enumerate(story_links, 1):
-        if i < 230: continue
         url = "http://www.mftd.org/{}".format(link)
         r = requests.get(url)
         if (r.status_code != 200):
