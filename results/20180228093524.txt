@@ -1,0 +1,6 @@
+method:		markovify
+training data:	../../../data/raw/mftd_english
+sentence count:	10
+comments:	n.a.
+---
+Then she wandered far into the forest, not knowing where he was going.

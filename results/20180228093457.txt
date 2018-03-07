@@ -1,0 +1,7 @@
+method:		markovify
+training data:	../../../data/raw/mftd_english
+sentence count:	10
+comments:	n.a.
+---
+After that he will drive out twelve stallions, alike as peas in a pod, with the same feathers, tail and head.
+At last she came to a great mountain, where an aged woman was sitting, playing with a golden apple.

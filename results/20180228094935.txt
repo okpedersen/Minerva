@@ -1,0 +1,11 @@
+method:		markovify
+training data:	../../../data/raw/mftd_english
+sentence count:	10
+comments:	n.a.
+---
+He answered he could not very well be performed together.
+And the boys grew up together in such love for one another that they became man and wife, and Marya Morevna, the fairest of queens.
+So after begging and entreating his father and mother for a long time, and were lying on the ground before me, as they do before Allah, their god.
+And he led them forth to his kingdom, for he had a mind to see the world and try to win fame and riches for himself.
+When the appointed day arrived, and the birds had won the battle.Then the King and Queen gave her splendid presents.
+Rain poured down, and the wind was rattling all the windows.“Poor creature!” said the poet, and took him by the feet, and thus they threw him down into the pit on it.

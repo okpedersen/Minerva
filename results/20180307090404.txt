@@ -1,0 +1,7 @@
+method:		markovify
+training data:	/home/okpedersen/Minerva/data/raw/mftd_english
+sentence count:	10
+comments:	n.a.
+---
+Of course, nobody understood what had occurred, and the king and queen were astounded at hearing the doves speak.
+When the servant came to the palace, the Princess asked him if it were true that he had seen anything of the Princesses.

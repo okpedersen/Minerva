@@ -1,0 +1,11 @@
+method:		markovify
+training data:	../../../data/raw/mftd_english
+sentence count:	10
+comments:	n.a.
+---
+The brothers had their dinner and came back to chew and fed her cubs.
+He wanted to wait until Little Red Riding Hood took care and went straight to the palace.
+She was as white as snow, and smelt sweet as honey.
+The bird complained bitterly to the king, and he thought it passing strange; but the princess said it was some witchcraft, and they must cut down the linden at once.
+You can sit on my back, and I felt as if I must die.
+Dark days and cold nights also passed over the old bell, and they stood still to listen.

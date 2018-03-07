@@ -1,0 +1,10 @@
+method:		markovify
+training data:	..//home/okpedersen/Minerva/data/raw/mftd_english
+sentence count:	10
+comments:	n.a.
+---
+The little black dog, as light as a soap-bubble, jumps up on his hind legs, and crushed them; for I set upon it.
+Taking the twelve cartloads, the youth went to the jetty, where the merchant had been waiting for him, greeted him and asked how he had fared.
+She hurried down to the water, but he could not see who it was that had come to its moorings in his chamber.
+In the end he stuffed it into the seams; the cock crew, and looked out that they did not perceive the Emperor.
+I will allow him to wander about the world for a long time, hardly daring to breathe.

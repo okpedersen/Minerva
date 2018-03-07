@@ -1,0 +1,12 @@
+method:		markovify
+training data:	../../../data/raw/mftd_english
+sentence count:	10
+comments:	n.a.
+---
+So he took a spade and went to the King, but the twelve stood behind the door, and behaved as if he had done a good deed.
+But the cheeses did not come back, so Brother Lustig took it out of his pocket, and laid it at the Queen's feet.
+This mysterious information came from the gate key.The Councilor and his wife had just arrived home, when the lord of the castle.
+It seemed, however, to him just as if he were sitting in a house.
+For this reason he was called Ricky of the Tuft, and was taken aback by the recollection.
+Boots went in, but, truth to say, he was very much in love with him as he was with her.
+She bent down and kissed his fair brow, then looked at the sky on a clear, starry night and watched the many shooting stars?

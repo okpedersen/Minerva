@@ -1,0 +1,8 @@
+method:		markovify
+training data:	/home/okpedersen/Minerva/data/raw/mftd_english
+sentence count:	10
+comments:	n.a.
+---
+Then he cut open the toad, and took out the bread and gave it to his king, is rewarded with chains of iron.
+So they again sent a messenger to the thicket, and begged so prettily that he would spare her life.
+The old man led him back into the castle, and found therein everything he needed.
