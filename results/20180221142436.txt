@@ -1,0 +1,6 @@
+method:		markovify
+training data:	../../../data/raw/facebook
+sentence count:	3
+comments:	n.a.
+---
+Hai mai ! But I love thee ... and it is soon cut off and we fly away ...

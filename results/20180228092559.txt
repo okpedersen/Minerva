@@ -1,0 +1,7 @@
+method:		markovify
+training data:	../../../data/raw/carnegie/
+sentence count:	10
+comments:	n.a.
+---
+He looked at her, and it was just as if they were intended as a masterpiece.
+And now the two children ran about the forest, and sought the rogues, but did not find them.

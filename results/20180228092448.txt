@@ -1,0 +1,15 @@
+method:		markovify
+training data:	../../../data/raw/carnegie/
+sentence count:	10
+comments:	n.a.
+---
+When therefore the king's son might some day wish to be in earnest, but now I must also know who my father is.
+A king had a daughter, who was just as if the sun were rising.
+But there, too, it was in full bloom, he would return.
+Once, therefore, when all the shoes were danced into holes, and they were all three forced to sign.
+Then he sat down and waited, and it was so strong that he tore himself in two.
+When the student had waited a while he became impatient, and as the shoes pleased him so much that she immediately came down and went towards the light, but on the next night he watched again.
+Then her husband was alarmed, and fell on the snow.
+When the barrel began to roll, the shepherd cried, I am looking at my little white cat, which is sitting up on the glass-mountain.
+Then the little one said, father, I will show you the way out of the hole, and put the little fellow on the ground in the dark, said he, how sad it is that we have a child, and when it was in a full blaze she sat down on a ridge and began to empty it.
+The maiden thanked God, and sat still till evening came, when the step-mother came home with the horse, and placed thumbling in its ear, and then the Lord left her.

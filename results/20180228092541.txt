@@ -1,0 +1,7 @@
+method:		markovify
+training data:	../../../data/raw/carnegie/
+sentence count:	10
+comments:	n.a.
+---
+He buried him beneath the bridge, took the boar, and carried it to the pasture, and set it among the grass.
+So he took a great stone which was lying there, and throw it on his head, and the calf kicks his face.

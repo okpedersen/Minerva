@@ -1,7 +1,6 @@
 import requests
 
 def main():
-
     # iterate through pages
     for page in range(1, 300):
 

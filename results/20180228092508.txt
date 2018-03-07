@@ -1,0 +1,6 @@
+method:		markovify
+training data:	../../../data/raw/carnegie/
+sentence count:	10
+comments:	n.a.
+---
+They thanked him, and went with it to a wise woman.

@@ -1,0 +1,13 @@
+method:		markovify
+training data:	..//home/okpedersen/Minerva/data/raw/mftd_english
+sentence count:	10
+comments:	n.a.
+---
+Blackie the dog. found out what had happened and should know all about it.
+Who put it there and gave it to the boy; then he put the key into the key-hole and turned it.
+He was very rich and handsome, and when he heard about feasting he was vexed that he had been forced to give him leave to go.
+One day the man went to the forest to rest himself in his trunk.
+Here were shoemakers, and tailors, and all sorts of good things, but nothing fell to the share of the youngest, and two servants had to lead her forth into the wild forest.
+When the hag saw what had happened she came running to the cottage.
+Then the angel of God gave them one meal with her, and after that he came again many times and at last I imagined I was still there.
+Then a great scuffling of feet was heard, and in a few days he appeared and embraced his sister.

@@ -1,0 +1,11 @@
+method:		markovify
+training data:	/home/okpedersen/Minerva/data/raw/mftd_english
+sentence count:	10
+comments:	n.a.
+---
+The pieces of the money-pig were thrown into the dust-bin, and the next day from the morning until the evening, but they could not see sang to them.
+The drummer did not need to wipe the tears from her eyes, and touched her lips with his.
+He stood there and wondered at everything just as if he were mad, and he could not believe what his own ears had heard.
+The two brothers rode away, and the servant who had concealed himself came and revealed everything to him.
+She one day sent her to graze a cow, and gave her a bag full of spun thread, to present to the King and asked if it would not soon be time for her to set the table.
+At last he came to a certain place.

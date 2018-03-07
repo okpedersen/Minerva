@@ -1,0 +1,6 @@
+method:		markovify
+training data:	../../../data/raw/facebook
+sentence count:	10
+comments:	n.a.
+---
+TOAD 13 . THE ADVENTURES OF PADDY THE BEAVER 16 . THE ADVENTURES OF GRANDFATHER FROG 9 . THE ADVENTURES OF OLD MR.
