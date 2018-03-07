@@ -1,26 +1,67 @@
 import numpy
+import os
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import Dropout
 from keras.layers import LSTM
 from keras.callbacks import ModelCheckpoint
+from preprocessing import generateDatasetFromTokens
+from preprocessing import generateDatasetFromString
+
+generateDatasetFromString
 
 class LSTMModel:
-    def __init__(self, shape1, shape2, outShape):
+    def __init__(self, seqLen, embedding):
+        self.embedding = embedding
+
         self.model = Sequential()
-        self.model.add(LSTM(256, input_shape=(shape1, shape2), return_sequences=True))
+        self.model.add(LSTM(256, input_shape=(seqLen, 300), return_sequences=True))
         self.model.add(Dropout(0.2))
         self.model.add(LSTM(256))
         self.model.add(Dropout(0.2))
-        self.model.add(Dense(outShape, activation='softmax'))
-        self.model.compile(loss='categorical_crossentropy', optimizer='adam')
+        self.model.add(Dense(300, activation='softmax'))
+        self.model.compile(loss='cosine_proximity', optimizer='adam')
+        self.currentEpoch = 0
 
-    def fit(self):
-        model.fit(X, y, epochs=50, batch_size=64, callbacks=callbacks_list)
+        self.callbacks_list = []
 
+    def loadCheckpoint(self, filepath):
+        print("Loaded checkpoint {}".format(filepath))
+        self.model.load_weights(filepath)
 
-model1 = LISTModel(2,3,3)
+    def loadCheckpointWithLowestLoss(self, directory, name):
+        checkpointFiles = [file[len(name) +1:-5] for file in os.listdir(directory) if file.startswith(name) and file.endswith(".hdf5")]
+        if len (checkpointFiles) < 1:
+            return
 
-model2 = LISTModel(5,1,2)
+        lowestLoss = float('inf')
+        checkpoint = ""
+        for file in checkpointFiles:
+            if(float(file) < lowestLoss):
+                lowestLoss = float(file)
+                checkpoint = file
 
-model1.fit()
+        self.loadCheckpoint("{}/{}-{}.hdf5".format(directory,name,checkpoint))
+
+    def setCheckpoint(self, directory, name):
+        filepath = directory+"/"+name+"-{loss:.8f}.hdf5"
+        checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
+        self.callbacks_list.append(checkpoint)
+
+    def fit(self, X, y, epochs, batch_size):
+        self.model.fit(X, y, epochs=epochs, batch_size=batch_size, callbacks=self.callbacks_list)
+
+    def fitTextTokens(self, tokens, epochs, batch_size):
+        X, y = generateDatasetFromTokens(tokens, self.seq_length, self.embedding)
+        self.fit(X, y, epochs, batch_size)
+
+    def fitTextString(self, string, epochs, batch_size):
+        X, y = generateDatasetFromString(string, self.seq_length, self.embedding)
+        self.fit(X, y, epochs, batch_size)
+
+    def predictNextWord(self, vectors):
+        prediction = model.predict(x, verbose=0)
+        word, vector = self.embedding.getClosestWordVector(prediction)
+
+    def generateText(self, seed, numWords = 100):
+        pass
