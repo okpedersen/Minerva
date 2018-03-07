@@ -23,13 +23,28 @@ def find_story_links_on_page(url):
     return story_links
 
 
-def main():
+def mftd_scrape(language=""):
 
-    url = "http://www.mftd.org/search.php?action=search&act=show&langname=English&author=&verse=&hq=&tq="
+    # get the root directory of the Minerva project
+    # e.g. /something/something/Minerva
+    basepath = path.normpath(path.realpath(__file__))
+    while path.basename(basepath) != "Minerva":
+        basepath = path.dirname(basepath)
+
+    # Check for supported language
+    language = language.lower()
+    if language not in ("norwegian", "english"):
+        print("Possibly unsupported language")
+        print("Exiting...")
+        sys.exit(1)
+
+    # Get URLs to story pages
+    url = "http://www.mftd.org/search.php?action=search&act=show&langname={ln}&author=&verse=&hq=&tq=".format(ln=language.capitalize())
     all_links = find_story_links_on_page(url)
-    url = "http://www.mftd.org/search.php?action=search&act=show&langname=English&author=&verse=1&hq=&tq="
+    url = "http://www.mftd.org/search.php?action=search&act=show&langname={ln}&author=&verse=1&hq=&tq=".format(ln=language.capitalize())
     verse_links = find_story_links_on_page(url)
-    story_links = set(all_links) - set(verse_links)
+    story_links = sorted(list(set(all_links) - set(verse_links)))
+
 
     # parse all stories
     for i, link in enumerate(story_links, 1):
@@ -51,10 +66,7 @@ def main():
             for br in story_tag.find_all("br"):
                 br.replace_with("\n")
             text = "\n".join(p.get_text() for p in story_tag.find_all('p'))
-            with open('../raw/mftd_english/{:04d}.txt'.format(i), 'w') as f:
+            with open(path.join(basepath, 'data', 'raw', 'mftd_{}'.format(language), '{:04d}.txt'.format(i)), 'w') as f:
+                print(f.name)
                 f.write(text)
 
-
-
-if __name__ == "__main__":
-    main()
