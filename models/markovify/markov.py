@@ -13,17 +13,22 @@ def main():
     # input model parameters
     p = {}
     p["method"] = "markovify"
-    p["stateSize"] = 4
+    p["stateSize"] = 5
     p["directory"] = os.path.normpath(os.path.join(basepath, "data/raw/mftd_english"))
     p["sentenceCount"] = 10
     p["comments"] = "n.a."
 
     # get and join all training data
     filenames = getAllFilenames(p["directory"])
-    text = joinTexts(p["directory"], filenames)
 
     # apply markovify and print sentences
-    model = makeMarkovModel(text, p["stateSize"])
+    models = []
+    for filename in filenames:
+        try:
+            models.append(markovify.Text(loadData(filename), state_size=p["stateSize"]))
+        except:
+            print("Model creation failed for: {}".format(filename))
+    model = markovify.combine(models)
     sentences = []
     for i in range(p["sentenceCount"]):
         sentences.append(model.make_sentence())
@@ -43,18 +48,8 @@ def getAllFilenames(directory):
     filenames = []
     for file in os.listdir(directory):
         if file.endswith(".txt"):
-            filenames.append(file)
+            filenames.append(os.path.join(directory, file))
     return filenames
-
-def joinTexts(directory, filenames):
-    allText = ""
-    for filename in filenames:
-        allText += " " + loadData(os.path.join(directory,filename))
-    return allText
-
-def makeMarkovModel(text, stateSize):
-
-    return markovify.Text(text, state_size = stateSize)
 
 def saveResults(filename, p, results):
     print("Writing to: " + filename)
