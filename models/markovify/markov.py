@@ -13,9 +13,9 @@ def main():
     # input model parameters
     p = {}
     p["method"] = "markovify"
-    p["stateSize"] = 5
+    p["stateSize"] = 2 # 2 is markovify default
     p["directory"] = os.path.normpath(os.path.join(basepath, "data/raw/mftd_english"))
-    p["sentenceCount"] = 10
+    p["sentenceCount"] = 5
     p["comments"] = "n.a."
 
     # get and join all training data
@@ -56,6 +56,7 @@ def saveResults(filename, p, results):
     with open(filename, 'w') as file:
         file.write("method:\t\t" + p["method"] + "\n")
         file.write("training data:\t" + p["directory"] + "\n")
+        file.write("order:\t\t" + str(p["stateSize"]) + "\n")
         file.write("sentence count:\t" + str(p["sentenceCount"]) + "\n")
         file.write("comments:\t" + p["comments"] + "\n")
         file.write("---\n")
