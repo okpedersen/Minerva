@@ -2,16 +2,17 @@
 
 # Small LSTM Network to Generate Text for Alice in Wonderland
 import numpy
+"""
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import Dropout
 from keras.layers import LSTM
 from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
-
+"""
 # load ascii text and covert to lowercase
 
-filename = "../scrapers/text/text2.txt"
+filename = "../texts.txt"
 raw_text = open(filename).read()
 raw_text = raw_text.lower()
 # create mapping of unique chars to integers
@@ -28,6 +29,8 @@ seq_length = 100
 dataX = []
 dataY = []
 
+print(char_to_int['g'])
+exit()
 for i in range(0, n_chars - seq_length, 1):
     seq_in = raw_text[i:i + seq_length]
     seq_out = raw_text[i + seq_length]
