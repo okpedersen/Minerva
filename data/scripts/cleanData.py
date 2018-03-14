@@ -1,12 +1,13 @@
 import sys
 import os
+import string
 
 # Alt til lowercase
 # Mellomrom foran tegn
 # Fjerne newline
 # Filer ../scrapers/text/text*.txt (1-209)
 
-SPECIAL_CHARS = ('.', ',', '"', ':', ';', '!', '?')
+SPECIAL_CHARS = tuple(string.punctuation)
 
 def clean_text_from_file(filename):
     with open(filename) as f:
