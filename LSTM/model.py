@@ -5,6 +5,7 @@ from keras.layers import Dense, Dropout, LSTM, Embedding
 from keras.callbacks import ModelCheckpoint
 from preprocessing import generateDatasetFromTokens
 from preprocessing import generateDatasetFromString
+from preprocessing import generateDatasetFromTokenizedDataset
 
 
 class LSTMModel:
@@ -60,6 +61,12 @@ class LSTMModel:
         X, y = generateDatasetFromString(string, self.seq_length, self.embedding)
         print(X.shape)
         self.fit(X, y, epochs, batch_size)
+
+    def fitTokenizedDataset(self, directory, epochs, batch_size):
+        for epoch in range(epochs):
+            print("Starting epoch {}/{}".format(epoch+1, epochs))
+            for X, y in generateDatasetFromTokenizedDataset(directory, self.seq_length, self.embedding):
+                self.model.fit(X, y, epochs=1, batch_size=batch_size)
     """
     def fitTextString(self, string, epochs, batch_size):
         X, y = generateDatasetFromString(string, self.seq_length, self.embedding)

@@ -19,8 +19,9 @@ checkpoint_name = "lstm_basic_embedding"
 
 files = [file for file in os.listdir(os.path.join(basepath, "data/tokenized/mftd_norwegian")) if file.endswith(".txt")]
 #print(files)
-with open(os.path.join(basepath, "data/tokenized/mftd_norwegian/{}".format(files[0])), "r") as file:
-    model.fitTextString(file.read(),10, 10)
+#with open(os.path.join(basepath, "data/tokenized/mftd_norwegian/{}".format(files[0])), "r") as file:
+#    model.fitTextString(file.read(),10, 10)
+model.fitTokenizedDataset("data/tokenized/mftd_norwegian", 10, 10)
 
 #tokens = ["Det","var","en","gang","en"]
 
