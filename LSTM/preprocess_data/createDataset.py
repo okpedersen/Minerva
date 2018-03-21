@@ -3,6 +3,8 @@ import fastText as ft
 import numpy as np
 import os
 import sys
+import gc
+import shutil
 
 print("loading vocabulary")
 embeddings = KeyedVectors.load("Norsk_embeddings")
@@ -40,6 +42,9 @@ for filename in os.listdir(directory):
 
         newWords[token] = outofvocab.get_word_vector(token)
 
+del embeddings
+del outofvocab
+gc.collect()
 
 if len(newWords) == 0:
     print("No out of vocabulary words detected")
@@ -54,8 +59,17 @@ for newword in newWords:
     newWordString += newword + '\n'
     line = str(newword) + " "+np.array2string(newWords[newword], formatter={'float_kind':lambda x: "%.4f" % x})[1:-1].replace('\n','') +"\n"
     newLines += line
-print("writing to file")
+print("writing to out of vocabulary list to file")
 with open("outofvocablist.txt", 'w') as file:
     file.write(newWordString)
-with open("300novec.vec", 'a') as file:
+
+
+with open("newvec.vec", 'w') as file:
+    with open("300novec.vec", 'r') as f2:
+        line = f2.readline()
+        words, vectors = line.replace('\n','').split(" ")
+        file.write("{} {}\n".format(int(words)+len(newWords), int(vectors)))
+        print("writing old vectors")
+        shutil.copyfileobj(f2, file)
+    print("writing new vectors")
     file.write(newLines)

@@ -1,20 +1,21 @@
-import numpy
+import numpy as np
 import os
 from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import Dropout
-from keras.layers import LSTM
+from keras.layers import Dense, Dropout, LSTM, Embedding
 from keras.callbacks import ModelCheckpoint
 from preprocessing import generateDatasetFromTokens
 from preprocessing import generateDatasetFromString
 
-generateDatasetFromString
 
 class LSTMModel:
-    def __init__(self, seqLen, embedding):
+    def __init__(self, seqLen, embeddingMatrixFile, embedding = None):
         self.embedding = embedding
+        self.seq_length = seqLen
 
+        embeddingMatrix = np.load(embeddingMatrixFile)
         self.model = Sequential()
+        self.model.add(Embedding(embeddingMatrix.shape[0], embeddingMatrix.shape[1], weights=[embeddingMatrix],
+        input_length=seqLen, trainable=False))
         self.model.add(LSTM(256, input_shape=(seqLen, 300), return_sequences=True))
         self.model.add(Dropout(0.2))
         self.model.add(LSTM(256))
@@ -49,7 +50,7 @@ class LSTMModel:
         self.callbacks_list.append(checkpoint)
 
     def fit(self, X, y, epochs, batch_size):
-        self.model.fit(X, y, epochs=epochs, batch_size=batch_size, callbacks=self.callbacks_list)
+        self.model.fit(X, y, epochs=epochs, batch_size=batch_size)#, callbacks=self.callbacks_list
 
     def fitTextTokens(self, tokens, epochs, batch_size):
         X, y = generateDatasetFromTokens(tokens, self.seq_length, self.embedding)
@@ -57,7 +58,13 @@ class LSTMModel:
 
     def fitTextString(self, string, epochs, batch_size):
         X, y = generateDatasetFromString(string, self.seq_length, self.embedding)
+        print(X.shape)
         self.fit(X, y, epochs, batch_size)
+    """
+    def fitTextString(self, string, epochs, batch_size):
+        X, y = generateDatasetFromString(string, self.seq_length, self.embedding)
+        self.fit(X, y, epochs, batch_size)
+        """
 
     def predictNextWord(self, vectors):
         prediction = model.predict(x, verbose=0)
