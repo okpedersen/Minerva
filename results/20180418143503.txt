@@ -1,0 +1,11 @@
+method:		markovify
+training data:	/home/okpedersen/Minerva/data/raw/mftd_english
+order:		4
+sentence count:	5
+comments:	n.a.
+---
+So the priest followed him just as he was, in his slippers and night-cap.
+The knight had golden armour, and the horse a brass bit in his mouth, so bright that the sunbeams gleamed from them a mile off.
+So they determined to go home to see her father and mother.
+One night he listened at the door of a little chamber in which she was to be sure and bring the Princess back with him.
+They bore him onwards, until he found himself in a poor street of the suburb called Christian's Haven.

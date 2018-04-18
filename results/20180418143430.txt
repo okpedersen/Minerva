@@ -1,0 +1,11 @@
+method:		markovify
+training data:	/home/okpedersen/Minerva/data/raw/mftd_english
+order:		2
+sentence count:	5
+comments:	n.a.
+---
+The flowers now appeared in the dungeon forthwith.
+For her, one after another, two peasants with their crossbows on their hands at something which he sat up and off he strode to his wont.
+The King turned pale, and miserable man in the world when he thought he had gained for himself what was in a certain shore, slept after his marriage with another, she would get together and kissed him on the hillocks, he chased and killed it in a way to ruin their happiness.
+The Sea King had many accomplishments, and everyone who could ride up the hill on which nothing was visible but his body was dead– the Toad in the middle of the well.
+On the high castle and set off again, and settled down to the delight of the house of a darker night of fate.

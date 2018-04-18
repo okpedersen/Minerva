@@ -1,0 +1,11 @@
+method:		markovify
+training data:	/home/okpedersen/Minerva/data/raw/mftd_english
+order:		3
+sentence count:	5
+comments:	n.a.
+---
+A window stood open, and they were in need of food, swooped down and seized him.
+The sweetest fresh butter and the finest bread were put into the fire just as the Princess had so contrived it.
+After her came the Queen wearing a blue velvet robe embroidered with gold, and the arms of a tall, strapping fellow.
+After that he lay down without a care in the world that a maiden was there who had to carry in a dish that was covered, and the lord King came too, an they began to greet one another, he found out what had taken place.
+So when he could not enjoy his supper at all; but the bottle neck thought deeply.

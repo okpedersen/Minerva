@@ -1,0 +1,11 @@
+method:		markovify
+training data:	/home/okpedersen/Minerva/data/raw/mftd_english
+order:		1
+sentence count:	5
+comments:	n.a.
+---
+Then came to take a fat mice.
+Once the meantime, however, for ever, and back to try; but presently came to have not die.
+But this girl's bad deeds, Cuội was a corner of them away from the bulwarks of thunder.
+He confided to prison.
+Thereupon Death just outside on land.

@@ -1,0 +1,7 @@
+method:		markovify
+training data:	/home/okpedersen/Minerva/data/raw/mftd_english
+order:		5
+sentence count:	5
+comments:	n.a.
+---
+He set off on his way, he walked and he walked, and he saw a house with a latticed door and some clothes-makers sitting behind it.

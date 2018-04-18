@@ -1,0 +1,11 @@
+method:		markovify
+training data:	/home/okpedersen/Minerva/data/raw/mftd_english
+order:		3
+sentence count:	5
+comments:	n.a.
+---
+He was indeed good-looking, and he could take no rest.
+Yes, now she will tell you what th sparrow says, and the sparrow flew from place to place, the carter and his wife and daughter who was so like him that no one could say anything ill-humored of her.
+He saw very well that Vardiello would soon make him go by foul.
+Vincenzo closed his eyes, and try to win fame and riches for himself.
+And then the father agreed, and she went and made up her mind what to do.

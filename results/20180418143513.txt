@@ -1,0 +1,10 @@
+method:		markovify
+training data:	/home/okpedersen/Minerva/data/raw/mftd_english
+order:		4
+sentence count:	5
+comments:	n.a.
+---
+Who knows how long she might have stood there if she had not seen eleven princes riding through the forest.
+So the hag put down the sack close to the church-door, and thought he might as well wait a little longer, to see if the others were still really hanging there.
+But Charming only gave him two little pats and said nothing, and very soon he arrives at the ferry, and the ferryman comes to meet him.
+Finally he threw the first piece of liver under the table and a glass was created from it.

@@ -1,0 +1,11 @@
+method:		markovify
+training data:	/home/okpedersen/Minerva/data/raw/mftd_english
+order:		1
+sentence count:	5
+comments:	n.a.
+---
+On he thought in a nest, and after a sad thoughts.
+The queen, and knew him!
+One day the prince's palace, over which you gave her side of war against something which the third had become like large and rowed with the poor man wore a living-soul.
+The good with her so that the little son, for the seashore sailed a great army disciplined, and there should be made her in the old friend the people in comedy and that he felt brave.
+So as early in the princess put off than he had been, for I will not intended to return again and every possible ways, and rooms, until their peerless daughter.
