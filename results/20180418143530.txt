@@ -1,0 +1,9 @@
+method:		markovify
+training data:	/home/okpedersen/Minerva/data/raw/mftd_english
+order:		5
+sentence count:	5
+comments:	n.a.
+---
+So they went on again a good bit, till they came to a thick, dark wood, which stretched far away to the seashore.
+But he slipped away, too; he went home to his father, where he was received with great politeness.
+A long time ago there lived a king who had three daughters so beautiful as cannot be described.
