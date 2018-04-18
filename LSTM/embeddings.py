@@ -1,5 +1,6 @@
 from gensim.models import KeyedVectors
 import numpy as np
+import random
 
 #model = KeyedVectors.load('../cc.no.300.vec')
 class Embedding:
@@ -26,10 +27,9 @@ class Embedding:
         except KeyError:
             pass # Word not in vocabulary
 
-        try:
-            return self.model.word_vec(word.lower()) #Try with lowercase
-        except KeyError:
-            pass #Out of vocabulary
+        return self.model.word_vec(word.lower()) #Try with lowercase
+        #except KeyError:
+        #    pass #Out of vocabulary
 
 
 
@@ -37,8 +37,23 @@ class Embedding:
     def vectorToWord(self, vector):
         if not self.loadedEmbedding:
             self.loadEmbeddingFromFile()
-        word = self.model.similar_by_vector[vector][0][0]
-        return word
+        potRes = self.model.similar_by_vector(vector)[0:5]
+        return potRes[0][0]
+        probSum = 0
+        for pres in potRes:
+            probSum += pres[1]
+
+        for i in range(len(potRes)):
+            potRes[i] = list(potRes[i])
+            potRes[i][1] /= probSum
+        prob = random.random()
+        cumProb = 0
+        idx = -1
+        while(cumProb < prob):
+            idx += 1
+            cumProb += potRes[idx][1]
+
+        return potRes[idx][0]
 
     def getClosestWordVector(self, vector):
         if not self.loadedEmbedding:
