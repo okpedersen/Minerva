@@ -1,0 +1,10 @@
+{
+    "action": "test",
+    "layers": [256, 256],
+    "dropout_layers": [0.2, 0.2],
+    "use-checkpoint": true,
+    "seq_length": 3,
+    "checkpoint_dir": "checkpoints3",
+    "seed": "Det var en gang"
+
+}
